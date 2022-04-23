@@ -13,21 +13,21 @@ Set-PSReadLineOption -PredictionSource History
 Set-Alias -Name vim -Value nvim
 Set-Alias ll ls
 Set-Alias g git
-Set-Alias nio -Value "ni --prefer-offline"
-Set-Alias s -Value "nr start"
-Set-Alias d -Value "nr dev"
-Set-Alias b -Value "nr build"
-Set-Alias bw -Value "nr build --watch"
-Set-Alias t -Value "nr test"
-Set-Alias tu -Value "nr test -u"
-Set-Alias tw -Value "nr test --watch"
-Set-Alias w -Value "nr watch"
-Set-Alias p -Value "nr play"
-Set-Alias c -Value "nr typecheck"
-Set-Alias lint -Value "nr lint"
-Set-Alias lintf -Value "nr lint --fix"
-Set-Alias release -Value "nr release"
-Set-Alias re -Value "nr release"
+Function nio{ni --prefer-offline} 
+Function s{nr start} 
+Function d{nr dev} 
+Function b{nr build} 
+Function bw{nr build --watch} 
+Function t{nr test} 
+Function tu{nr test -u} 
+Function tw{nr test --watch} 
+Function w{nr watch} 
+Function p{nr play} 
+Function c{nr typecheck} 
+Function lint{nr lint} 
+Function lintf{nr lint --fix} 
+Function release{nr release} 
+Function re{nr release} 
 
 
 # -------------------------------- #
@@ -114,7 +114,7 @@ function forks($fork) {
 #   fi
 # }
 
-function dir($1) {
+function ndir($1) {
   mkdir $1 && cd $1
 }
 
