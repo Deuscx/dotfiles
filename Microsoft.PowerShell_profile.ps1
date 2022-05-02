@@ -95,7 +95,7 @@ Function ghci {gh run list -L 1}
 # -------------------------------- #
 
 function z($project) {
-  cd ~/z/$project
+  cd D:/z/$project
 }
 
 # function repros() {
@@ -103,7 +103,7 @@ function z($project) {
 # }
 
 function forks($fork) {
-  cd ~/f/$fork
+  cd D:/f/$fork
 }
 
 # function pr() {
