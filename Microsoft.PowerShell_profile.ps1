@@ -9,6 +9,12 @@ Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 Set-PSReadLineOption -PredictionSource History
 
+# https://github.com/antfu/ni/issues/21 
+# Remove-Alias 
+Remove-Alias -Name ni -Force
+Remove-Alias -Name gcm -Force
+Remove-Alias -Name gp -Force
+Remove-Alias -Name gc -Force
 # Alias
 Set-Alias -Name vim -Value nvim
 Set-Alias ll ls
@@ -32,6 +38,7 @@ Function re{nr release}
 
 # -------------------------------- #
 # Git
+# https://github.com/cli/cli
 # -------------------------------- #
 
 # Use github/hub
@@ -52,13 +59,13 @@ Function gmv {git mv}
 
 Function main {git checkout main}
 
-Function gco {git checkout}
-Function gcob {git checkout -b}
+Function gco {git checkout $args}
+Function gcob {git checkout -b $args}
 
-Function gb {git branch}
-Function gbd {git branch -d}
+Function gb {git branch $args}
+Function gbd {git branch -d $args}
 
-Function grb {git rebase}
+Function grb {git rebase $args}
 Function grbom {git rebase origin/master}
 Function grbc {git rebase --continue}
 
@@ -71,8 +78,8 @@ Function grh1 {git reset HEAD~1}
 Function ga {git add}
 Function gA {git add -A}
 
-Function gc {git commit}
-Function gcm {git commit -m}
+Function gc {git commit $args}
+Function gcm {git commit -m $args}
 Function gca {git commit -a}
 Function gcam {git add -A && git commit -m}
 Function gfrb {git fetch origin && git rebase origin/master}
@@ -98,9 +105,9 @@ function z($project) {
   cd D:/z/$project
 }
 
-# function repros() {
-#   cd ~/r/$1
-# }
+function repros($repro) {
+  cd D:/r/$repro
+}
 
 function forks($fork) {
   cd D:/f/$fork
@@ -118,29 +125,33 @@ function ndir($1) {
   mkdir $1 && cd $1
 }
 
-# function clone() {
-#   if [[ -z $2 ]] then
-#     hub clone "$@" && cd "$(basename "$1" .git)"
-#   else
-#     hub clone "$@" && cd "$2"
-#   fi
-# }
+# https://docs.microsoft.com/zh-cn/powershell/scripting/learn/deep-dives/everything-about-if
+function clone() {
+  $repo = $args[0]
+  $rename = $args[1]
+  if ( $rename -eq $null){
+    $basename =  [System.IO.Path]::GetFileNameWithoutExtension($repo)
+    hub clone $args && cd $basename
+  }else {
+    hub clone $args && cd $rename
+  }
+}
 
 # Clone to ~/z and cd to it
-# function clonez() {
-#   z && clone "$@" && code . && cd ~2
-# }
+function clonez() {
+  z && clone($args) && code .
+}
 
-# function cloner() {
-#   repros && clone "$@" && code . && cd ~2
-# }
+function cloner() {
+  repros && clone $args && code . 
+}
 
-# function clonef() {
-#   forks && clone "$@" && code . && cd ~2
-# }
+function clonef() {
+  forks && clone $args && code . 
+}
 
 function codez() {
-  z && code "$@" && cd -
+  z && code $args && cd -
 }
 
 # function serve() {
