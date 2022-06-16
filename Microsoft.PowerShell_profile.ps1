@@ -21,19 +21,19 @@ Set-Alias ll ls
 Set-Alias g git
 Function nio{ni --prefer-offline} 
 Function s{nr start} 
-Function d{nr dev} 
-Function b{nr build} 
+Function d{nr dev $args} 
+Function b{nr build $args} 
 Function bw{nr build --watch} 
-Function t{nr test} 
+Function t{nr test $args} 
 Function tu{nr test -u} 
 Function tw{nr test --watch} 
-Function w{nr watch} 
-Function p{nr play} 
-Function c{nr typecheck} 
+Function w{nr watch $args} 
+Function p{nr play $args} 
+Function c{nr typecheck $args} 
 Function lint{nr lint} 
 Function lintf{nr lint --fix} 
-Function release{nr release} 
-Function re{nr release} 
+Function release{nr release $args} 
+Function re{nr release $args} 
 
 
 # -------------------------------- #
@@ -47,13 +47,13 @@ Set-Alias git hub
 # Go to project root
 Function grt {cd "$(git rev-parse --show-toplevel)"}
 
-Function gs {git status}
-Function gp {git push}
+Function gs {git status $args}
+Function gp {git push $args}
 Function gpf {git push --force}
 Function gpft {git push --follow-tags}
 Function gpl {git pull --rebase}
-Function gcl {git clone}
-Function gst {git stash}
+Function gcl {git clone $args}
+Function gst {git stash $args}
 Function grm {git rm}
 Function gmv {git mv}
 
@@ -69,13 +69,13 @@ Function grb {git rebase $args}
 Function grbom {git rebase origin/master}
 Function grbc {git rebase --continue}
 
-Function gl {git log}
+Function gl {git log $args}
 Function glo {git log --oneline --graph}
 
 Function grh {git reset HEAD}
 Function grh1 {git reset HEAD~1}
 
-Function ga {git add}
+Function ga {git add $args}
 Function gA {git add -A}
 
 Function gc {git commit $args}
@@ -131,9 +131,9 @@ function clone() {
   $rename = $args[1]
   if ( $rename -eq $null){
     $basename =  [System.IO.Path]::GetFileNameWithoutExtension($repo)
-    hub clone $args && cd $basename
+    git clone $args && cd $basename
   }else {
-    hub clone $args && cd $rename
+    git clone $args && cd $rename
   }
 }
 
