@@ -15,6 +15,7 @@ Remove-Alias -Name ni -Force
 Remove-Alias -Name gcm -Force
 Remove-Alias -Name gp -Force
 Remove-Alias -Name gc -Force
+Remove-Alias -Name gcob -Force
 # Alias
 Set-Alias -Name vim -Value nvim
 Set-Alias ll ls
