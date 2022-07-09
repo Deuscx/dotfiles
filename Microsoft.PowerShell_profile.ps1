@@ -15,7 +15,8 @@ Remove-Alias -Name ni -Force
 Remove-Alias -Name gcm -Force
 Remove-Alias -Name gp -Force
 Remove-Alias -Name gc -Force
-Remove-Alias -Name gcob -Force
+Remove-Alias -Name gcb -Force
+
 # Alias
 Set-Alias -Name vim -Value nvim
 Set-Alias ll ls
@@ -61,7 +62,7 @@ Function gmv {git mv}
 Function main {git checkout main}
 
 Function gco {git checkout $args}
-Function gcob {git checkout -b $args}
+Function gcb {git checkout -b $args}
 
 Function gb {git branch $args}
 Function gbd {git branch -d $args}
