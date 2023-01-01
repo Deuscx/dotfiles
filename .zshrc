@@ -177,3 +177,21 @@ function serve() {
     live-server $1
   fi
 }
+
+# add proxy for v2ray
+export hostip=$(ip route | grep default | awk '{print $3}')
+export hostport=10808
+alias proxy='
+    export HTTPS_PROXY="socks5://${hostip}:${hostport}";
+    export HTTP_PROXY="socks5://${hostip}:${hostport}";
+    export ALL_PROXY="socks5://${hostip}:${hostport}";
+    echo -e "Acquire::http::Proxy \"http://${hostip}:${hostport}\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null;
+    echo -e "Acquire::https::Proxy \"http://${hostip}:${hostport}\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null;
+'
+alias unproxy='
+    unset HTTPS_PROXY;
+    unset HTTP_PROXY;
+    unset ALL_PROXY;
+    sudo sed -i -e '/Acquire::http::Proxy/d' /etc/apt/apt.conf.d/proxy.conf;
+    sudo sed -i -e '/Acquire::https::Proxy/d' /etc/apt/apt.conf.d/proxy.conf;
+'
