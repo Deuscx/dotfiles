@@ -35,7 +35,8 @@ else
 end
 
 map("i", "jj", "<ESC>")
-map("n", "<leader>d", "dd")
+-- Select All
+map("n", "<C-a>", "ggVG")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
