@@ -1,0 +1,118 @@
+{
+    "vim.autoSwitchInputMethod.defaultIM": "1033",
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\Users\\Deuscx\\Downloads\\im-select.exe",
+    "vim.autoSwitchInputMethod.switchIMCmd": "D:\\Users\\Deuscx\\Downloads\\im-select.exe {im}",
+    "vim.easymotion": true,
+    "vim.handleKeys": {
+        // "<C-n>": false,
+        "<C-a>": false,
+        "<C-b>": false,
+        "<C-c>": false,
+        "<C-f>": false,
+        "<C-k>": false,
+        "<C-r>": false,
+        // "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "j",
+                "j"
+            ]
+        }
+    ],
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "leader",
+                "i"
+            ],
+            "commands": [
+                "extension.toggleBool"
+            ]
+        },
+        {
+            "after": [
+                "leader",
+                "leader",
+                "s"
+            ],
+            "before": [
+                "leader",
+                "s"
+            ]
+        },
+        {
+            "after": [
+                "leader",
+                "leader",
+                "/"
+            ],
+            "before": [
+                "leader",
+                "f"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "h"
+            ],
+            "commands": [
+                "editor.action.showDefinitionPreviewHover"
+            ]
+        },
+        {
+            "after": [
+                "_"
+            ],
+            "before": [
+                "H"
+            ]
+        },
+        {
+            "after": [
+                "$"
+            ],
+            "before": [
+                "L"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "]"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "["
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "o"
+            ],
+            "commands": [
+                "workbench.action.closeOtherEditors"
+            ]
+        }
+    ],
+}
