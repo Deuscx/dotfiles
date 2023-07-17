@@ -126,5 +126,17 @@
         "when": "editorTextFocus",
         "args": "<C-c>"
     },
+    {
+        "key": "alt+j",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus",
+        "args": "<A-j>"
+    },
+    {
+        "key": "alt+k",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus",
+        "args": "<A-k>"
+    },
     //endRegion
 ]
