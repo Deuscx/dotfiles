@@ -107,10 +107,24 @@
         "key": "ctrl+k"
     },
     {
+        "command": "-vscode-neovim.send",
+        "key": "ctrl+w"
+    },
+    {
+        "command": "-vscode-neovim.send",
+        "key": "ctrl+c"
+    },
+    {
         "command": "vscode-neovim.compositeEscape1",
         "key": "j",
         "when": "neovim.mode == insert && editorTextFocus",
         "args": "j"
-    }
+    },
+    {
+        "key": "ctrl+c",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus",
+        "args": "<C-c>"
+    },
     //endRegion
 ]
