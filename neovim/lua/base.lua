@@ -35,6 +35,7 @@ if vim.g.vscode then
     -- Copy in normal mode. when https://github.com/vscode-neovim/vscode-neovim/issues/1266 fixed. Remove it and use `y` to copy
     map("n", "<C-c>", "<Cmd>call VSCodeNotify('editor.action.clipboardCopyAction')<CR>")
 
+    map("n", "za", "<Cmd>call VSCodeNotify('editor.toggleFold')<CR>")
     -- VsCode Extension
     map("n", "<Leader>i", "<Cmd>call VSCodeNotify('extension.toggleBool')<CR>")
 else
