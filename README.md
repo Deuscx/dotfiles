@@ -14,8 +14,7 @@ Use [Vscode-neovim](https://github.com/vscode-neovim/vscode-neovim) + Vscode
 - [keybindings.json](./vscode/keybindings.json)
 
 - neovim config
-  - [init.lua](./neovim/init.lua)
-
+  - [neovim config](https://github.com/Deuscx/lazyvim)
 ---
 deprecated setting
 
