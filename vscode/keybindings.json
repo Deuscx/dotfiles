@@ -6,22 +6,38 @@
         "command": "workbench.files.action.focusFilesExplorer",
         "when": "editorTextFocus"
     },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.terminal.killAll",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+
+    },
     // File Operation
-    {
-        "key": "a",
-        "command": "explorer.newFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    },
-    {
-        "key": "r",
-        "command": "renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    },
-    {
-        "key": "d",
-        "command": "deleteFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    },
+    // {
+    //     "key": "a",
+    //     "command": "explorer.newFile",
+    //     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    // },
+    // {
+    //     "key": "r",
+    //     "command": "renameFile",
+    //     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    // },
+    // {
+    //     "key": "d",
+    //     "command": "deleteFile",
+    //     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    // },
     {
         "key": "ctrl+alt+oem_period",
         "command": "markdownlint.fixAll"
@@ -126,6 +142,7 @@
         "when": "editorTextFocus",
         "args": "<C-c>"
     },
+    // move line
     {
         "key": "alt+j",
         "command": "vscode-neovim.send",
