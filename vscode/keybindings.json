@@ -2,6 +2,11 @@
 [
     // 自动聚焦explore
     {
+        "key": "cmd+b",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "editorTextFocus && isMac"
+    },
+    {
         "key": "ctrl+b",
         "command": "workbench.files.action.focusFilesExplorer",
         "when": "editorTextFocus && isWindows"
@@ -104,7 +109,7 @@
     },
     {
         "command": "-vscode-neovim.send",
-        "key": "ctrl+w"
+        "key": "ctrl+w",
     },
     {
         "command": "-vscode-neovim.send",
