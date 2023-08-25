@@ -154,5 +154,15 @@
         "key": "ctrl+space",
         "command": "editor.action.triggerSuggest",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+h",
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+l",
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]
