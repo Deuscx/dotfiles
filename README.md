@@ -24,3 +24,4 @@ deprecated setting
 ## Reference
 
 - [LazyVim/LazyVim: Neovim config for the lazy](https://github.com/LazyVim/LazyVim)
+- [zap-zsh/zap: :zap: Zap is a minimal zsh plugin manager](https://github.com/zap-zsh/zap)
