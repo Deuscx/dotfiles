@@ -96,6 +96,11 @@
     },
     //startRegion
     {
+        "key": "ctrl+f",
+        "command": "actions.find",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
         "command": "-vscode-neovim.send",
         "key": "ctrl+z",
     },
@@ -112,20 +117,10 @@
         "key": "ctrl+w",
     },
     {
-        "command": "-vscode-neovim.send",
-        "key": "ctrl+c"
-    },
-    {
         "command": "vscode-neovim.compositeEscape1",
         "key": "j",
         "when": "neovim.mode == insert && editorTextFocus",
         "args": "j"
-    },
-    {
-        "key": "ctrl+c",
-        "command": "vscode-neovim.send",
-        "when": "editorTextFocus && neovim.init",
-        "args": "<C-c>"
     },
     {
         "key": "alt+j",
@@ -158,11 +153,21 @@
     {
         "key": "shift+h",
         "command": "workbench.action.previousEditorInGroup",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly && neovim.mode == 'normal'"
     },
     {
         "key": "shift+l",
         "command": "workbench.action.nextEditorInGroup",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly && neovim.mode == 'normal'"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-vscode-neovim.escape",
+        "when": "editorTextFocus && neovim.ctrlKeysNormal.c && neovim.init && !dirtyDiffVisible && !findWidgetVisible && !inReferenceSearchEditor && !markersNavigationVisible && !notebookCellFocused && !notificationCenterVisible && !parameterHintsVisible && !referenceSearchVisible && neovim.mode == 'normal' && editorLangId not in 'neovim.editorLangIdExclusions'"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-vscode-neovim.escape",
+        "when": "editorTextFocus && neovim.ctrlKeysInsert.c && neovim.init && neovim.mode != 'normal' && editorLangId not in 'neovim.editorLangIdExclusions'"
     }
 ]
