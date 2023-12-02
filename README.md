@@ -20,6 +20,9 @@ deprecated setting
 
 - [deprecated](./deprecated)
 
+## Used Tools
+
+- [fnm](https://github.com/Schniz/fnm) node manager
 
 ## Reference
 
